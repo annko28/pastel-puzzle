@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastel Block Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="sidebar">
+            <h1 id="title">Pastel Puzzle</h1>
+            <div class="info-box">STAGE: <span id="stage">1</span> / 5</div>
+            <div class="info-box">SCORE: <span id="score">0</span></div>
+            <div class="info-box">LINES: <span id="lines">0</span> / 10</div>
+            <button id="start-btn">START</button>
+        </div>
+        <div id="canvas-area">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+            <div id="clear-screen" class="hidden">
+                <img id="clear-img" src="clear.jpg" alt="Stage Clear!">
+                <div id="clear-text">STAGE CLEAR!</div>
+                <button id="next-btn">NEXT STAGE</button>
+            </div>
+            <div id="gameover-screen" class="hidden">
+                <div id="gameover-text">GAME OVER</div>
+                <button id="retry-btn">RETRY</button>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="bgm" src="bgm.mp3" loop></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
