@@ -183,6 +183,7 @@ let p;
 function generateNextPiece() {
     let r = Math.floor(Math.random() * PIECES.length);
     p = new Piece(PIECES[r], COLORS[r]);
+    p.draw();
 }
 
 // ラインが揃ったかチェック
