@@ -252,9 +252,10 @@ function drop(timestamp) {
         p.moveDown();
         dropStart = Date.now();
     }
-    if(!gameOver && !document.getElementById('clear-screen').classList.contains('hidden') === false) {
-        // クリア画面が出ていなければループを継続
-    } else if (!gameOver) {
+
+    // クリア画面が隠れていて（ゲーム中）、ゲームオーバーでなければ落下を継続
+    let isClearScreenHidden = document.getElementById('clear-screen').classList.contains('hidden');
+    if (!gameOver && isClearScreenHidden) {
         requestAnimationFrame(drop);
     }
 }
