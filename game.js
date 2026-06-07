@@ -337,3 +337,23 @@ document.getElementById('retry-btn').addEventListener('click', startGame);
 // 初期盤面だけ描画しておく
 initBoard();
 drawBoard();
+// --- スマホ用ボタンの操作イベント（ここから下） ---
+const btnLeft = document.getElementById('btn-left');
+const btnRight = document.getElementById('btn-right');
+const btnRotate = document.getElementById('btn-rotate');
+const btnDown = document.getElementById('btn-down');
+
+// タッチ操作の設定関数
+const setupBtn = (btn, action) => {
+    if(!btn) return;
+    // スマホでのタップ
+    btn.addEventListener('touchstart', (e) => { 
+        e.preventDefault(); 
+        if(!gameOver && p && document.getElementById('clear-screen').classList.contains('hidden')) action(); 
+    }, { passive: false });
+};
+
+setupBtn(btnLeft, () => p.moveLeft());
+setupBtn(btnRight, () => p.moveRight());
+setupBtn(btnRotate, () => p.rotate());
+setupBtn(btnDown, () => p.moveDown());
