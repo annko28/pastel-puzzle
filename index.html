@@ -3,53 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pastel Block Puzzle</title>
+    <title>Pastel Puzzle</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="game-container">
-        
-        <div id="sidebar">
+        <div id="header">
             <h1 id="title">Pastel Puzzle</h1>
-            <div class="info-container">
-                <div class="info-box">STAGE: <span id="stage">1</span> / 5</div>
-                <div class="info-box">SCORE: <span id="score">0</span></div>
-                <div class="info-box">LINES: <span id="lines">0</span> / 10</div>
-            </div>
-            <div class="btn-container">
-                <button id="start-btn">START</button>
-                <button id="pause-btn" disabled>PAUSE</button>
+            <div class="stats">
+                <div>STAGE: <span id="stage">1</span></div>
+                <div>SCORE: <span id="score">0</span></div>
             </div>
         </div>
         
         <div id="canvas-area">
             <canvas id="gameCanvas" width="300" height="600"></canvas>
-            
-            <div id="pause-screen" class="hidden overlay-screen">
-                <div class="overlay-text">PAUSE</div>
-            </div>
-
-            <div id="clear-screen" class="hidden overlay-screen">
-                <img id="clear-img" src="clear.jpg" alt="Stage Clear!">
-                <div class="overlay-text">STAGE CLEAR!</div>
-                <button id="next-btn" class="action-btn">NEXT STAGE</button>
-            </div>
-
-            <div id="gameover-screen" class="hidden overlay-screen">
-                <div class="overlay-text">GAME OVER</div>
-                <button id="retry-btn" class="action-btn">RETRY</button>
-            </div>
+            <div id="overlay" class="hidden"></div>
         </div>
 
-        <div id="mobile-controls">
-            <button id="btn-left" class="ctrl-btn">◀︎</button>
-            <button id="btn-down" class="ctrl-btn">▼</button>
-            <button id="btn-right" class="ctrl-btn">▶︎</button>
-            <button id="btn-rotate" class="ctrl-btn rotate-btn">↻</button>
+        <div id="controls">
+            <button id="start-btn">START</button>
+            <button id="pause-btn">PAUSE</button>
+            <div id="mobile-buttons">
+                <button id="btn-left">◀</button>
+                <button id="btn-rotate">↻</button>
+                <button id="btn-right">▶</button>
+                <button id="btn-down">▼</button>
+            </div>
         </div>
-
     </div>
-    
     <audio id="bgm" src="bgm.mp3" loop></audio>
     <script src="game.js"></script>
 </body>
